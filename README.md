@@ -112,6 +112,13 @@ After selecting the text, try d to delete, or y to copy, or :s/match/replace/, o
 - '{a-z} - To the first non-blank character on the line with mark {a-z}  
 - `` `" - go to position before jump, at last edit  
 
+### Buffers
+
+- :ls — list opened files (buffers)  
+- :bd — close opened file (buffer)  
+- :b <N> — select buffer <N> to show in current window  
+- :bn — select next buffer  
+- :bp — select previous buffer  
 
 ### Windows
 
