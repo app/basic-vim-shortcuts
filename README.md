@@ -116,7 +116,7 @@ After selecting the text, try d to delete, or y to copy, or :s/match/replace/, o
 
 - :ls — list opened files (buffers)  
 - :bd — close opened file (buffer)  
-- :b <N> — select buffer <N> to show in current window  
+- :b {N} — select buffer {N} to show in current window  
 - :bn — select next buffer  
 - :bp — select previous buffer  
 
