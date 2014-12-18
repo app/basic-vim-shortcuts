@@ -1,7 +1,11 @@
-#<!--
+: 'Help
+<!--
+ '
 # RUN this file as a bash script to view documentation
 pandoc -s -f markdown -t man $0 | man -l - ; exit
-#-->
+: '
+-->
+'
 
 Basic vim shortcuts for myself rememberance
 =
