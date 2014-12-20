@@ -1,8 +1,8 @@
-:' RUN this file as a bash script to view documentation
+: ' RUN this file as a bash script to view documentation in man page format
 <!--
 '
 pandoc -s -f markdown -t man $0 | man -l - ; exit
-:'
+: '
 -->
 '
 
