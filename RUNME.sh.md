@@ -1,7 +1,7 @@
 : ' Run this file as a bash script to view documentation in man page format
 <!--
 '
-pandoc -s -f markdown -t man $0 | man -l - ; exit
+[[ "$(command -v grep)" ]] && [[ "$(command -v ls)" ]] && pandoc -s -f markdown -t man $0 | man -l - || echo "pandoc or markdown is not installed"
 : '
 -->
 '
