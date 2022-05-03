@@ -23,6 +23,7 @@ Basic vim shortcuts for myself rememberance
 - ^ — first non-blank character of line  
 - $ — end of line  
 - xG — Go To command (prefix with number — 5G goes to line 5)  
+- 5gg — Go To command (prefix with number — 5gg goes to line 5)  
 - gg — go to BOF  
 - G — go to EOF  
 - Ctrl+d, Ctrl+u — scroll half a page up, down  
@@ -48,6 +49,9 @@ Basic vim shortcuts for myself rememberance
 - ]] — Jump to next function  
 - [{ — Jump to beginning of current block  
 - ]} — Jump to end of current block  
+- { — Jump to first empty line above cursor  
+- } — Jump to first empty line below cursor  
+- `` — Jump to last cursor position  
 
 ### Code indenting
 
@@ -62,13 +66,14 @@ Basic vim shortcuts for myself rememberance
 
 ### Deleting text
 
-- dw — Delete a word  
-- dd — Delete line  
+- dw — Delete a word into clipboard  
+- dd — Delete line into clipboard  
 - S — Change line. Empty line and switch to Insert mode  
 - C — Change rest of the line. Remove all after cursor and switch to Insert mode  
 - di( — Delete inside parentheses. (You can be anywhere inside them.)  
 - dit — Delete inside tag. (Meaning, delete what is between the opening and closing tags.)  
 - dt{char} — Delete to {char} in current line. Also works with f  
+- d$ — Delete to end of line  
 
 ### Deleting text (Insert mode)
 
@@ -76,45 +81,59 @@ Basic vim shortcuts for myself rememberance
 - Alt+c,w — Delete a word after cursor  
 - Alt+c,e — Delete a word after cursor. Space is not a word  
 - Ctrl+d — Delete a word after cursor (Macros have to be defined in .vimrc file: inoremap <C-d> <space><esc>ce)  
-- Ctrl+u — delete to beginning of indent  
+- Ctrl+u — Delete to beginning of indent  
 
 ### Select text (visual mode)
 
 - v — start visual mode, mark lines, then do command (such as y-yank)  
 - V — start Linewise visual mode  
-- o — move to other end of marked area  
 - Ctrl+v — start visual block mode  
-- O — move to Other corner of block  
-- aw — mark a word  
-- ab — a () block (with braces)  
-- aB — a {} block (with brackets)  
-- ib — inner () block  
-- iB — inner {} block  
-- gv — reselect block  
-After selecting the text, try d to delete, or y to copy, or :s/match/replace/, or :center, or !sort, or >> to indent or << to unindent or ...  
-- . — to repear last command  
+- vaw — "visual around word" select word under cursor and white space   
+- viw — "visual inner/inside word" select word under cursor  
+- va( — "visual around ()" select block (with parentheses); same with `vab`  
+- va{ — "visual around {}" select block {with braces}; same with `vaB`  
+- va[ — "visual around []" select block [with brackets]  
+- vi( — "visual inner/inside ()" select block inside parentheses; same with `vib`  
+- vi{ — "visual inner/inside {}" select block inside braces; same with `viB`  
+- vi[ — "visual inner/inside []" select block inside bracket  
+- gv — reselect recently selected block  
 
-### Editing
+### Selected text commands aka Visual mode commands
+- o — move to other end of marked area  
+- O — move to Other corner of block  
+- d — cut to clipboard; same with x  
+- y — copy to clipboard  
+- :s/match/replace/ — search and replace inside selection  
+- :sort — sort selectid lines  
+- > — indent selected lines  
+- < — unindent selected lines  
+- u — switch char to lower case  
+- U — switch char to upper case  
+- ~ — switch char case  
+
+### Editing in normal mode
 
 - ~ — switch char case  
 - J — Join line (pull the next line up after the end of the current line)
+- . — to repear last command  
+- >> to indent or << to unindent
 
 ### How to Exit
 
 - ZZ — Write current file, if modified, and exit  
 - ZQ — Quit current file and exit (same as ":q!")  
 
-### Undo/Redo
+### Undo/Redo in normal mode
 
 - u — Undo  
 - Ctrl+r — Redo  
 
-### Marks
+### Marks in normal mode
 
 - m{a-zA-Z} — Set mark {a-zA-Z} at cursor position (does not move the cursor, this is not a motion command)  
-- `{a-z} — To the mark {a-z}  
-- '{a-z} — To the first non-blank character on the line with mark {a-z}  
-- `` `" — go to position before jump, at last edit  
+- `{a-z} — Go to the mark {a-z}  
+- '{a-z} — Go to the first non-blank character on the line with mark {a-z}  
+- `` `" — Go to position before jump, at last edit  
 
 ### Buffers
 
